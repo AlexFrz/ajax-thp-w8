@@ -1,0 +1,42 @@
+<div class="container d-flex justify-content-center">
+<div class="container">
+<center>
+<%= form_tag(emails_path, method: :post, class: "form", remote: true) do %>    
+    <%= submit_tag 'Recieve an email', :name => 'commit', :class => 'btn-danger' %>
+    <%= token_tag %> 
+  <% end %>
+</div>
+</center>
+
+</div>
+    </br>
+<div class="flex-container">
+  <div class="row">
+  <div class="tablex">
+     <h4>List of emails</h4>
+    </br>
+
+      <%= render 'list' %>
+       </div>
+      </div>
+
+    <div class="tabley">
+      <div class="row">
+        <div class="col-sm">
+     <h4>Your message</h4>
+      </br>
+ 
+     <div class="col-8">
+    <div class="card">
+            <div class="card-body" id="content-email">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+    </div>
+
+  </div>
+</div>
+</div>

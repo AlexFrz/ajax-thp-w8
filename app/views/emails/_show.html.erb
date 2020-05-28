@@ -1,0 +1,10 @@
+					<div id="content-email" class="card-body">
+							<h5><%= email.object %></h5><br>
+							<p><%= email.body %></p>
+</br>
+</br>
+            <%= link_to "Delete", emails_path(@email.id), method: :delete, class: "btn btn-danger" %>
+
+                </div>
+                
+

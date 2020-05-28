@@ -1,0 +1,23 @@
+<div class="container">
+  <ul>
+  <% @categories.each do  |category|%>
+  <li><%= category.title  %></li>
+  <div class="card">
+    <ul id="<%= category.title  %>">
+      <% category.tasks.each do |task|  %>
+      <li>
+        <%= task.title  %>
+        <% unless task.deadline.nil? %>
+          , to read: <%= task.deadline.strftime('%D')  %>
+        <% end %>
+        <%= link_to "Edit this task", edit_task_path(task) %>      </li>
+        <%= link_to "Delete this task", task_path(task), method: :delete, class: "fas fa-toilet" %>
+        <%= check_box_tag :name, 1, false, data: { remote: true, url: "/tasks/:id(.:format)" , params: { id: ExampleID, status: StatusValue}.to_param, method: "put" }%>
+        </li>
+
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+  </ul>
+</div>

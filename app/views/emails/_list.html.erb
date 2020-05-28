@@ -1,0 +1,5 @@
+<% @emails.reverse_each do |email| %>
+<ul class="mail-list">
+<li class="tablecontent"><%= link_to email.object, email_path(email), remote: true, class: "btn" %></h6></li>
+</ul>
+<% end %>
